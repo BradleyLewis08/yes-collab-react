@@ -1,0 +1,237 @@
+@import "../../styles/variables";
+
+// dimensions for catalog
+$catalog-height: 90%;
+$calatog-blurb-height: calc(100% - 50px);
+$catalog-main-margin: 6vh;
+$catalog-width: 70%;
+$catalog-blurb-width: 32%;
+$catalog-margins: 3%;
+$search-width: 20%;
+$catalog-inner-margins: 4%;
+$button-margin: 12px;
+
+// additional variables
+$blue-color: #318ef5;
+$font-size: 14px;
+
+%border {
+    border: 1px solid $gray-color;
+    border-radius: 10px;
+}
+
+%search-margins {
+    width: 100% - $catalog-inner-margins * 4;
+    margin-left: $catalog-inner-margins * 2;
+    margin-right: $catalog-inner-margins;
+}
+
+.embedded-description * {
+    font-size: $font-size;
+}
+
+.mobile-catalog-container { 
+    margin: 0 $button-margin * 2;
+    color: $darker-blue-color;
+    p {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+    h2 {
+        margin-top: 26px;
+        font-size: 36px;
+        color: $darker-blue-color;
+    }
+}
+
+.catalog-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px);
+    margin: -1vh 5%;
+}
+
+.asterisk-info-hover {
+    font-size: 15px;
+    position: absolute;
+    top: -6px;
+    left: 14px;
+    cursor: pointer;
+}
+
+.asterisk-info-mobile {
+    font-size: 12px;
+}
+
+.catalog-info-container {
+    @extend %border;
+    display: flex;
+    height: $catalog-height;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.catalog {
+    @extend %border;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+// Try to avoid using set heights
+.catalog-filter-container {
+    width: $catalog-blurb-width;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.catalog-blurbs {
+    border-right: 1px solid $gray-color;
+    height: $calatog-blurb-height;
+    overflow: scroll;
+    width: 100%;
+    flex: 1 0 auto;
+    margin-right: $catalog-main-margin;
+    z-index: 1;
+}
+
+.no-blurbs-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.catalog-blurbs.showing-filters::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $darker-blue-color;
+    opacity: 0.2;
+    z-index: 2;
+    border-radius: 10px 0 0 10px;
+}
+
+.catalog-listing {
+    height: 100%;
+    overflow-y: scroll;
+    width: 68%;
+    padding: $catalog-main-margin;
+
+    .loading {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .failed {
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+
+.catalog-search-container {
+    display: flex;
+    padding-top: 10px;
+    height: 56px;
+    width: 100%;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $darker-blue-color;
+
+    input {
+        flex: 1 0 auto;
+        border-radius: 10px;
+        outline: none;
+        border: $darker-blue-color 1px solid;
+        font-size: 14px;
+        padding: 4px 10px;
+        margin-left: $button-margin * 2;
+        width: 50px;
+    }
+
+    button {
+        background-color: $blue-color;
+        padding: 5px 8px;
+        margin: 0 $button-margin;
+        color: white;
+        border-radius: 10px;
+        font-size: 14px;
+        height: 31px;
+        outline: none;
+        border: none;
+    }
+
+    button:last-child {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    %search-margins-mobile {
+        width: 90%;
+        margin-right: 2%;
+    }
+
+    .catalog-container {
+        flex-direction: column;
+        z-index: 10;
+        margin: 0;
+        align-items: unset;
+        height: calc(var(--vh, 1vh) * 100);
+    }
+
+    .catalog-blurbs {
+        @extend %search-margins-mobile;
+        border-radius: 10px;
+        width: 100%;
+        margin: 0;
+        border: none;
+        height: 0;
+        flex: 1 1 auto;
+    }
+
+    .catalog-search {
+        height: 90px;
+        border: none;
+        width: 100%;
+        margin: 0;
+        flex: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid $gray-color;
+        border-radius: 0;
+
+        input {
+            @extend %search-margins-mobile;
+            margin: 1%;
+        }
+
+        button {
+            @extend %search-margins-mobile;
+            margin: 1%;
+            border: 1px solid $gray-color;
+            border-radius: 5px;
+            font-size: $font-size;
+            padding: 5px;
+            color: black;
+            background-color: white;
+            text-align: left;
+            padding-left: 5px;
+
+            img {
+                float: right;
+                margin-top: 0.75vh;
+                width: 15px;
+                margin-right: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,148 @@
+@import "../../../styles/variables";
+
+.industry-search-bar-container {
+    // width: 40%;
+    // min-width: 410px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    background-color: none;
+    position: relative;
+
+    box-sizing: border-box;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+
+    .industry-input-container {
+        width: 100%;
+        height: inherit;
+        position: relative;
+    }
+
+    .industry-search-input {
+        padding: 18px;
+        border: none;
+        border-radius: 14px 0 0 14px;
+        width: 100%;
+        font-weight: normal;
+        font-size: 18px;
+        outline: none;
+        border: 1px solid $darker-blue-color;
+        border-right: none;
+        height: inherit;
+    }
+
+    a {
+        height: inherit;
+    }
+
+    .icon-container {
+        background-color: $darker-blue-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 0px 14px 14px 0px;
+        width: 60px;
+        height: inherit;
+
+        .industry-search-icon {
+            width: 20px;
+            height: 20px;
+            margin-left: -3px;
+            color: white;
+        }
+    }
+
+    .react-autosuggest__container {
+        width: 100%;
+        height: inherit;
+    }
+
+    .react-autosuggest__suggestions-container--open {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 120%;
+        padding: 10px;
+    }
+
+    .react-autosuggest__suggestions-list {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+
+        .react-autosuggest__suggestion {
+            background-color: white;
+            border-radius: 14px;
+            border: 1px solid $blue-color;
+            margin: 4px;
+            color: $blue-color;
+            font-size: 12px;
+            transition: all 0.3s;
+
+            a {
+                text-decoration: none;
+                div {
+                    padding: 10px;
+                }
+            }
+        }
+
+        .react-autosuggest__suggestion--highlighted {
+            color: white;
+            background-color: $blue-color;
+            a {
+                color: white;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .industry-search-bar-container {
+        min-width: unset;
+        width: 60%;
+        min-width: 220px;
+
+        .industry-search-input {
+            font-size: 14px;
+        }
+
+        .icon-container {
+            height: inherit;
+
+            .industry-search-icon {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .industry-search-bar-container {
+        .industry-search-input {
+            font-size: 12px;
+        }
+        .react-autosuggest__suggestions-container--open {
+            width: 180%;
+        }
+
+        .react-autosuggest__suggestions-list {
+            .react-autosuggest__suggestion {
+                border-radius: 12px;
+                margin: 3px;
+                font-size: 10px;
+
+                a div {
+                    padding: 8px;
+                }
+            }
+        }
+    }
+}

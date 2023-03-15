@@ -1,0 +1,134 @@
+@import "../../../../styles/variables";
+
+$left-margin: 10px;
+$padding: 5%;
+$font-size: 12px;
+$gray-color: #99a4ae;
+
+.blurb-container {
+    position: relative;
+    height: relative;
+    padding: 1px;
+    border-bottom: 1px #99a4ae solid;
+    overflow: hidden;
+
+    h1 {
+        font-size: $font-size * 2;
+        font-weight: 500;
+        margin-bottom: 3px;
+    }
+
+    .bookmark {
+        width: 17px;
+        height: 21px;
+        display: block;
+        float: right;
+        margin-right: 5%;
+        margin-top: -8%;
+        box-shadow: none;
+    }
+
+    .blurb-info-container {
+        display: flex;
+        .blurb-startup-container {
+            margin-left: 10px;
+            padding-bottom: 14px;
+            .industry {
+                background-color: $darker-blue-color;
+                color: white;
+            }
+        }
+    }
+
+    img {
+        display: block;
+        margin-top: 10px;
+        width: 70px;
+        height: auto;
+        margin: 15px;
+        margin-right: 5px;
+        border-radius: 5px;
+    }
+
+    .funding {
+        margin-top: 0px;
+        display: block;
+        margin-bottom: 5px;
+        color: #318ef5;
+        font-size: 14px;
+    }
+
+    .positions-list-container {
+        border-top: 1px solid $blue-color;
+        margin: 0px 0px -1px 8px;
+        border-left: 2px solid $blue-color;
+        border-width: 1px 0px 2px 5px;
+
+        .position-listing-container {
+            display: flex;
+            padding: 8px 10px;
+            cursor: pointer;
+            align-items: center;
+            transition: all 0.1s;
+        }
+
+        .position-listing-container.active-position {
+            background-color: $light-blue-color;
+        }
+
+        .position-listing-container:hover {
+            .position-title {
+                text-decoration: underline;
+            }
+        }
+
+        .title-container {
+            flex: 1 0 auto;
+            width: 50px;
+            position: relative;
+
+            .position-title {
+                font-size: $font-size + 1px;
+                font-weight: 500;
+                margin-top: 0px;
+                margin-bottom: 3%;
+                margin-right: 3%;
+                z-index: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
+
+            .positions-available {
+                font-size: $font-size - 2px;
+                position: absolute;
+                top: $font-size - 6px;
+                left: 8px;
+            }
+        }
+
+        .rounded-info {
+            white-space: nowrap;
+            overflow: unset;
+            text-overflow: wrap;
+        }
+    }
+
+    .blurb {
+        margin: 10px 0 4px 0;
+        padding-right: $padding;
+        font-size: $font-size;
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .pay {
+        float: left;
+    }
+}

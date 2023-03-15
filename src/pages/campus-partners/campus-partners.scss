@@ -1,0 +1,23 @@
+@import "../../styles/variables";
+
+.partner-wrapper {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .landing-container {
+        margin-bottom: 0px;
+    }
+
+    .loading-partners {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .loading {
+            margin: 0;
+        }
+    }
+}

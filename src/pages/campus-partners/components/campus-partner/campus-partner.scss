@@ -1,0 +1,148 @@
+@import "../../../../styles/variables"; 
+
+$logo-img-size-reg: 100px;
+$logo-img-size-small: 90px;
+
+@mixin border {
+    border-radius: 20px;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.partner-wrapper {
+    .partner-container {
+        margin-top: 0px;
+        width: 76%;
+    }
+    @media screen and (max-width: 1000px) {
+        .partner-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    @media screen and (max-width: 568px) {
+        .partner-container {
+            display: block;
+        }
+    }
+}
+
+
+.campus-partner-container {
+    width: 100%;
+    display: flex;
+    flex: 0;
+
+    .campus-partner-header-container {
+        @include border;
+    
+        display: flex;
+        align-items: center;
+        margin-right: 4%;
+        margin-top: 4%;
+    
+        position: relative;
+        padding: 20px;
+        background-color: $main-background-color;
+
+        cursor: pointer;
+    
+        .img-container {
+            width: $logo-img-size-reg;
+            height: $logo-img-size-reg;
+            border-radius: 12px;
+            background-color: $main-background-color;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            img {
+                float: left;
+                width: $logo-img-size-reg;
+                height: $logo-img-size-reg;
+                object-fit: contain;
+                border-radius: 12px;
+            }
+        }
+    }
+    
+    .campus-partner-header-container::after {
+        @include border;
+        position: absolute;
+        content: "";
+        padding: 40px;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 200ms;
+        border-color: inherit;
+    }
+    .campus-partner-header-container:hover::after {
+        top: 12px;
+        left: 12px;
+    }
+    
+    .campus-partner-content-container {
+        @include border;
+    
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 4%;
+    
+        position: relative;
+        padding: 20px;
+        background-color: $main-background-color;
+
+        flex: 1 0;
+    
+        .campus-partner-name {
+            font-weight: 700;
+            font-size: 20px;
+            margin: 0;
+            color: white;
+            width: 30%;
+        }
+        .campus-partner-university {
+            font-weight: 500;
+            font-size: 20px;
+            margin: 0;
+            color: white;
+            width: 20%;
+        }
+        .campus-partner-content {
+            font-weight: 500;
+            font-size: 16px;
+            margin: 0;
+            color: white;
+            width: 40%;
+        }
+        .left-separator {
+            border-left: 2px solid white;
+            height: 80%;
+            margin: 0 20px;
+        }
+    }
+    
+    @media screen and (max-width: 1000px) {
+        margin-right: 4%;
+        margin-bottom: 4%;
+
+        .campus-partner-content-container {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 568px) {
+        .campus-partner-header-container {
+            width: 100%;
+            .img-container {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+

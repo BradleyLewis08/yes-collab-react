@@ -1,0 +1,15 @@
+@import "../../../../styles/variables";
+
+.dropdown-container {
+    position: relative;
+    .select__control {
+        border-radius: 10px;
+        outline: none;
+        border: $darker-blue-color 1px solid;
+        font-size: 14px;
+        margin: 12px 0px;
+    }
+    .select__control:hover {
+        border: $darker-blue-color 1px solid;
+    }
+}

@@ -1,0 +1,153 @@
+@import "../../styles/variables";
+
+$img-size-reg: 90px;
+$img-size-small: 60px;
+
+.our-network-container {
+    .partner-blurbs-container {
+        width: 76%;
+
+        .partner-blurbs-row {
+            display: flex;
+            margin: 0 -2%;
+        }
+
+        .partner-blurbs {
+            width: 46%;
+            margin: 2%;
+
+            position: relative;
+            border: $darker-blue-color 2px solid;
+            border-radius: 20px;
+            padding: 32px;
+            background-color: $main-background-color;
+
+            cursor: pointer;
+
+            .partner-info-container {
+                display: flex;
+
+                .img-container {
+                    width: $img-size-reg;
+                    height: $img-size-reg;
+                    border-radius: 12px;
+                    background-color: $main-background-color;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        float: left;
+                        width: $img-size-reg;
+                        height: auto;
+                        border-radius: 12px;
+                    }
+                }
+
+                .info-container {
+                    position: relative;
+                    padding-left: 15px;
+                    height: $img-size-reg;
+                    overflow-y: hidden;
+                }
+                .partner-name {
+                    font-weight: 700;
+                    font-size: 22px;
+                }
+                .blurb {
+                    position: relative;
+                    margin-top: 5px;
+                    font-size: 14px;
+                    --max-lines: 3;
+                    --lh: 14px;
+                    max-height: calc(var(--lh) * var(--max-lines));
+                    overflow: hidden;
+                }
+            }
+            .partner-info-container::before {
+                content: "...";
+                position: absolute;
+                top: 94px;
+                right: 20px;
+            }
+            .industries-container {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: -4px;
+                margin-top: 10px;
+                height: 36px;
+                overflow: hidden;
+
+                .industry {
+                    margin: 4px;
+                    font-size: 11px;
+                    color: #f6f3f3;
+                    background-color: $blue-color;
+                    border-radius: 8px;
+                    padding: 6px 8px;
+                }
+            }
+        }
+
+        .partner-blurbs::after {
+            position: absolute;
+            content: "";
+            border: $darker-blue-color 2px solid;
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all 200ms;
+        }
+        .partner-blurbs:hover::after {
+            top: 12px;
+            left: 12px;
+        }
+    }
+    .loading-partners {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .loading {
+            margin: 0;
+        }
+    }
+    @media screen and (max-width: 960px) {
+        .partner-blurbs-container {
+            width: 95%;
+            .partner-blurbs-row {
+                display: block;
+                margin: 0;
+            }
+            .partner-blurbs {
+                width: 80%;
+                margin: 30px 10%;
+                .partner-info-container {
+                    display: flex;
+                    .img-container {
+                        width: $img-size-small;
+                        height: $img-size-small;
+                        img {
+                            width: $img-size-small;
+                        }
+                    }
+                    .partner-name {
+                        font-weight: 700;
+                        font-size: 18px;
+                    }
+                    .info-container {
+                        height: $img-size-small;
+                    }
+                }
+                .partner-info-container::before {
+                    top: 66px;
+                }
+            }
+        }
+    }
+}

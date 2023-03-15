@@ -1,0 +1,262 @@
+@import "../../../../styles/variables";
+
+$listing-color: #318ef5;
+$icon-size: 34px;
+$font-size: 14px;
+$font-size-md: 24px;
+
+.no-listing-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .no-listing {
+        width: 70%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+.listing-container {
+    width: 100%;
+    font-size: $font-size;
+    font-weight: 500;
+    padding-top: 10px;
+
+    .title-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0px;
+
+        .startup-name-container {
+            display: flex;
+            align-items: center;
+            a {
+                margin-left: 12px;
+            }
+        }
+
+        h1 {
+            margin-top: 5px;
+            font-size: $font-size * 3;
+            font-weight: 700;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        .logo-container {
+            width: 130px;
+            height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            margin-top: 0%;
+        }
+
+        .logo {
+            height: auto;
+            width: 130px;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+        .title-info-container {
+            max-width: 60%;
+        }
+
+        @media screen and (max-width: 900px) {
+            display: block;
+            .title-info-container {
+                width: 100%;
+                max-width: unset;
+            }
+            .logo-container {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .role-title {
+        color: #636363;
+        font-size: $font-size-md;
+        font-weight: 600;
+        margin-bottom: 4px;
+        margin-top: 2px;
+    }
+
+    .pay-info {
+        margin-top: 0px;
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 700;
+        color: $listing-color;
+        font-size: $font-size;
+    }
+
+    .rounded-info {
+        font-size: $font-size;
+        height: 30px;
+        margin: 4px 4px;
+    }
+
+    .learn-more {
+        text-align: center;
+        position: relative;
+        background-color: $listing-color;
+        border-radius: 2px;
+        color: #fff;
+        border: white;
+        padding: 2px 4px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
+        margin-left: 4px;
+
+        img {
+            width: 15px;
+        }
+    }
+
+    .learn-more:hover {
+        opacity: 0.7;
+    }
+
+    .buttons {
+        margin-top: 3%;
+        padding: 1%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3%;
+    }
+
+    .icon {
+        width: $icon-size;
+        height: $icon-size;
+        padding: 9px;
+    }
+
+    .info-heading {
+        font-size: $font-size;
+        font-weight: 700;
+        color: black;
+        text-transform: none;
+    }
+
+    .info-skill {
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    .text:nth-child(2) {
+        margin-top: 12px;
+    }
+    .text {
+        margin-top: 6px;
+        margin-bottom: 0;
+        font-size: $font-size;
+    }
+
+    ul {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.listing-details-container {
+    display: flex;
+    margin-top: 20px;
+
+    .details-block {
+        padding: 14px 18px;
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid $darker-blue-color;
+    }
+
+    .founder-details {
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        h4 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .founders-container {
+            display: flex;
+        }
+
+        .founder:last-child {
+            margin-right: 0;
+        }
+
+        .founder {
+            display: block;
+            margin-right: 18px;
+            p {
+                margin-top: 5px;
+                margin-bottom: 0px;
+                font-size: $font-size;
+            }
+
+            .linkedin-icon {
+                margin-left: 0;
+            }
+
+            img {
+                margin-left: 8px;
+                height: 20px;
+                width: auto;
+            }
+        }
+    }
+    .listing-details {
+        flex: 1 0 auto;
+        width: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        p {
+            font-size: 14px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+        }
+
+        .icon {
+            margin-top: -7px;
+        }
+
+        .listing-detail {
+            display: flex;
+            margin-top: 3px;
+            margin-right: 28px;
+        }
+    }
+    @media screen and (max-width: 900px) {
+        display: block;
+
+        .founder-details {
+            width: unset;
+            margin-right: 0;
+        }
+        .listing-details {
+            margin-top: 20px;
+            width: unset;
+        }
+    }
+}

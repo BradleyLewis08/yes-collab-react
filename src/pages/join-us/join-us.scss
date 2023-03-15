@@ -1,0 +1,151 @@
+@import "../../styles/variables";
+
+.join-us-container {
+    .header-container {
+        .desc-block {
+            flex-direction: column;
+            margin-top: 6vh;
+        }
+        .first-content-desc span {
+            font-weight: 700;
+        }
+        .pricing-container {
+            float: left;
+            margin-right: 40px;
+            .pricing-title {
+                text-transform: unset;
+                margin-top: 0;
+                font-size: 20px;
+            }
+            .pricing-header {
+                display: flex;
+                flex-wrap: wrap;
+
+                span {
+                    display: flex;
+                    align-items: flex-end;
+                    flex-wrap: nowrap;
+                }
+
+                h4 {
+                    font-size: 32px;
+                }
+
+                h5 {
+                    font-size: 24px;
+                }
+
+                .pricing-unit {
+                    color: gray;
+                }
+
+                svg {
+                    margin: auto 10px;
+                }
+            }
+            .pricing-component-main {
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                margin: 4px 0;
+                width: 100%;
+
+                svg {
+                    color: $darker-blue-color;
+                    margin-right: 12px;
+                    font-size: 20px;
+                    flex: 0 auto;
+                    width: 14px;
+                }
+            }
+            .pricing-details {
+                font-size: 16px;
+                margin-bottom: 0;
+                max-width: 360px;
+            }
+        }
+        .details-container {
+            float: left;
+            display: block;
+            max-width: 40%;
+
+            span {
+                font-weight: 700;
+            }
+
+            .meet-out-network-link {
+                margin-top: 12px;
+                position: relative;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                color: $blue-color;
+                font-weight: 700;
+
+                span {
+                    position: relative;
+                    font-size: 24px;
+                    line-height: 10px;
+                    left: 2px;
+                    transition: all 0.3s;
+                }
+
+                &:hover span {
+                    left: 8px;
+                }
+            }
+
+            .join-link {
+                display: block;
+            }
+
+            .regular-button {
+                margin-top: 20px;
+            }
+        }
+
+        @media screen and (max-width: 1090px) {
+            .pricing-container {
+                float: unset;
+                margin-right: 0;
+            }
+            .details-container {
+                max-width: unset;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .desc-block {
+                padding: 24px;
+            }
+            .pricing-container {
+                .pricing-header {
+                    flex-wrap: wrap;
+                    align-items: unset;
+                    span {
+                        display: flex;
+                        align-items: flex-end;
+                        flex-wrap: nowrap;
+                    }
+                    h4 {
+                        font-size: 24px;
+                        margin: 2px 0;
+                    }
+                    h5 {
+                        font-size: 16px;
+                        margin: 2px 0;
+                    }
+                }
+                .pricing-component-main {
+                    font-size: 14px;
+                }
+                .pricing-details {
+                    font-size: 16px;
+                }
+            }
+            .details-container {
+                font-size: 16px;
+            }
+        }
+    }
+}

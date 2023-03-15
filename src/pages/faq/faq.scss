@@ -1,0 +1,195 @@
+@import "../../styles/variables";
+
+.faq-container .header-container {
+    overflow: auto;
+}
+
+.faq-header {
+    width: 60%;
+    position: relative;
+    flex-direction: row;
+    justify-content: unset;
+
+    h2 {
+        margin-bottom: -4px;
+        flex: 0 auto;
+    }
+
+    p {
+        flex: 1 0 auto;
+        width: 20px;
+        padding-top: 42px;
+        margin: 0;
+        margin-left: 12px;
+        font-weight: 700;
+        color: $darker-blue-color;
+    }
+
+    @media screen and (max-width: 568px) { 
+        flex-direction: column;
+        width: 80%;
+        p {
+            width: unset;
+            padding-top: 12px;
+            margin: 0;
+        }
+    }
+}
+
+.faq-container {
+    .overall {
+        background-image: url(./images/faq.svg);
+        background-size: 100% auto;
+        // background-repeat: no-repeat;
+        overflow: visible;
+        // margin-bottom: -20px;
+
+        .header-container {
+            text-align: right;
+            padding-bottom: 34px;
+        }
+
+        .Collapsible {
+            margin: 36px 0;
+            .Collapsible__trigger {
+                margin-left: 20%;
+                padding: 10px 20px 10px 24px;
+                background-color: #FFFFFF;
+                border-style: solid;
+                border-width: 2px;
+                border-radius: 10px;
+                border-color: #4A8FEE;
+                font-family: 'futura-pt';
+                font-size: 24px;
+                color: #4A8FEE;
+                cursor: pointer;
+
+                @media screen and (max-width: 568px) { 
+                    margin-left: 10%;
+                }
+            }
+
+            .Collapsible__trigger:hover {
+                padding: 10px 20px 10px 24px;
+                background-color: #4A8FEE;
+                border-style: solid;
+                border-width: 2px;
+                border-radius: 10px;
+                border-color: #4A8FEE;
+                font-family: 'futura-pt';
+                font-size: 24px;
+                color: #FFFFFF;
+            }
+        }
+
+        .content-container {
+            align-items: flex-start;
+
+            hr {
+                border: 2px solid $darker-blue-color;
+            }
+
+            .info-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 20px 0;
+
+                .info-container-desc {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1 0;
+
+                    h4 {
+                        font-family: 'futura-pt-bold';
+                        color: #4A8FEE;
+                        text-align: left;
+                    }
+                }
+            }
+
+            .row {
+                display: flex;
+            }
+
+            .column {
+                flex: 50%;
+                padding: 60px;
+            }
+
+            hr {
+                width: 100%;
+                border-color: $darker-blue-color;
+            }
+        }
+
+        @media screen and (max-width: 568px) {
+            .content-container {
+                margin-top: 40px;
+                .info-container {
+                    p {
+                        font-size: $small-font-size;
+                    }
+                    h2 {
+                        font-size: 30px;
+                    }
+                }
+                .row {
+                    display: block;
+                }
+                .column {
+                    padding: 7%;
+                }
+            }
+
+            .column {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.bottom-wave-container {
+    position: relative;
+
+    .bottom-wave-info-container {
+        color: $darker-blue-color;
+        margin: 10vh 0;
+        margin-left: 20%;
+        text-transform: unset;
+
+        @media screen and (max-width: 720px) {  
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    }
+
+    h2 {
+        color: $darker-blue-color;
+        text-transform: unset;
+        font-weight: 700;
+        @media screen and (max-width: 720px) {  
+            font-size: 32px;
+        }
+    }
+
+    p {
+        color: $darker-blue-color;
+        margin-left: 2px;
+        a {
+            color: $darker-blue-color;
+        }
+        @media screen and (max-width: 720px) {  
+            font-size: 20px;
+        }
+    }
+
+    .bottom-wave {
+        margin-bottom: -20px;
+    }
+}
+
+
+.faq-title {
+    text-align: center;
+}
